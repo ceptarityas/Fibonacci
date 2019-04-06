@@ -18,29 +18,42 @@ public class JavaApplication1 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException {
-        // TODO code application logic here
-        BufferedReader dataInput = new BufferedReader(new InputStreamReader(System.in));
-        String input;
-        int banyakBilangan = 0;
-        int a = 1;
-        int b = 1;
-        int c;
-        int i;
-        System.out.print("Input : ");
-        try {
-            input = dataInput.readLine();
-            banyakBilangan = Integer.parseInt(input);
-        } catch (NumberFormatException error) {
-            System.out.println("Error !!");
-        }
-        System.out.print("Output : " + a + " "+ b + " ");
-        for (i = 0; i < banyakBilangan - 2; i++) {
-            c = a + b;
-            System.out.print(c + " ");
-            a = b;
-            b = c;
-        }
-        System.out.println("");
-    }   
-}
+    // Java Program to find 
+// sum of Fibonacci numbers 
+
+	
+	// Computes value of first 
+	// fibonacci numbers 
+	static int calculateSum(int n) 
+	{ 
+		if (n <= 0) 
+		return 0; 
+	
+		int fibo[]=new int[n+1]; 
+		fibo[0] = 0; fibo[1] = 1; 
+	
+		// Initialize result 
+		int sum = fibo[0] + fibo[1]; 
+	
+		// Add remaining terms 
+		for (int i=2; i<=n; i++) 
+		{ 
+			fibo[i] = fibo[i-1]+fibo[i-2]; 
+			sum += fibo[i]; 
+		} 
+	
+		return sum; 
+	} 
+	
+	// Driver program to test above function 
+	public static void main(String args[]) 
+	{ 
+		
+                Scanner scan = new Scanner(System.in);
+                System.out.print("Input : ");
+		int sum = scan.nextInt();
+                System.out.print("Output : "+ calculateSum(sum)); 
+	} 
+} 
+
+
